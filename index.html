@@ -1,0 +1,100 @@
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  body {
+    display: flex;
+    justify-content: left;
+    align-items: top;
+    height: 100vh;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #1e003e;
+    color: #dace76;
+
+  }
+  
+  h1 {
+    
+    font-size: 30px;
+   border: 3px solid #dace76;
+  }
+	border: 3px #dace76;
+  
+  
+</style>
+
+
+<main>
+  <h1 id="fl"></h1>
+  
+</main>
+
+
+<script>
+
+ 
+  const data = [{
+      chapter: 'It was raining, you were wet, misrable, and lonely.',
+    	image: ''
+  	},
+    {
+      chapter: '...meow...',
+      image: ''
+    },
+    {
+      chapter: 'There is a noise coming from the allyway.',
+      image: ''
+    },
+    {
+      chapter: 'It ia a cat! It also looks wet, misrable, and lonely.',
+      image: ''
+    },
+    {
+      chapter: 'Instantly, you two bond!',
+      image: ''
+    },
+  	{
+      chapter: 'You spend the next week, hanging out, cuddleing, and enjoying each others company.',
+      image: ''
+    },
+  	{
+      chapter: '',
+      image: ''
+    },     
+		{
+      chapter: 'Unforntaly your new friend died.',
+      image: ''
+    },    
+    {
+      chapter: 'You think "no this is no the end, I have to do something!"',
+      image: ''
+    },   
+    {
+      chapter: 'You decide to try an resurect your new pet cat.',
+      image: ''
+    },     
+  ]
+  
+
+  let i = 0;
+  function addLetter(str, id,) {
+    document.getElementById(id).textContent += str.charAt(i);
+  	i++;
+    if (i < str.length) {
+      setTimeout(addLetter, 125, str, id);
+    }
+  }
+
+  function load(level) {
+    const obj = data[level]
+    //document.querySelector('h1').textContent = obj.chapter
+    addLetter(obj.chapter, "fl")
+    //document.querySelector('h3').textContent = obj.subtitle
+  }
+
+  window.addEventListener('load', () => load(0))
+  
+  
+  
+  
+  
+</script>
